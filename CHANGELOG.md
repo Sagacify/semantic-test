@@ -1,3 +1,23 @@
+# [2.0.0](https://github.com/Sagacify/semantic-test/compare/v1.1.0...v2.0.0) (2021-01-05)
+
+
+### Bug Fixes
+
+* **index:** a correction on a major release ([09b99a6](https://github.com/Sagacify/semantic-test/commit/09b99a691172a6a3685c00658540a91051fce5ad))
+
+
+### Performance Improvements
+
+* create the new api interface ([02d081a](https://github.com/Sagacify/semantic-test/commit/02d081a2407cbfe8b0128229a228a405295f55f3))
+
+
+### BREAKING CHANGES
+
+* full api change
+
+- /health become /healthcheck
+- /doc become /docs
+
 # [1.1.0](https://github.com/Sagacify/semantic-test/compare/v1.0.1...v1.1.0) (2021-01-05)
 
 
