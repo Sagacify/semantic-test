@@ -1,4 +1,4 @@
-// Fix 3
+// Feat awsome, commit 1
 const config = require('config');
 const server = require('./server');
 const log = require('saga-logger').create({ module: module.id });
