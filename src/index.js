@@ -1,5 +1,4 @@
-// Fix 1
-// Fix 2
+// Fix 3
 const config = require('config');
 const server = require('./server');
 const log = require('saga-logger').create({ module: module.id });
