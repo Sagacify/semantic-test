@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  node:
+    build: .
+    command: npm run start:dev
+    environment:
+      APP_PORT: 3000
+      APP_URL: http://localhost:3000
+      LOG_LEVEL: info
+      NODE_ENV: development
+      MAX_FILE_SIZE: 10mb
+    ports:
+      - 3000:3000
+    volumes:
+      - ./config:/var/www/config
+      - ./src:/var/www/src
+      - ./test:/var/www/test
+      - ./package.json:/var/www/package.json
+      - ./package-lock.json:/var/www/package-lock.json
+      # This works only if you are not using compiled modules
+      # Otherwise remove node_modules from the volumes
+      # You'll then need to rebuild the image each time you add packages
+      - ./node_modules:/var/www/node_modules
+      - ./coverage:/var/www/coverage

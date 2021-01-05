@@ -1,0 +1,6 @@
+.DS_Store
+.env
+.vscode
+.nyc_output
+node_modules
+coverage

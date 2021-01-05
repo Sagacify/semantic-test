@@ -1,0 +1,55 @@
+{
+  "name": "semantic-test",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node .",
+    "start:dev": "LOG_PRETTY=true nodemon --watch src -e js,json --exec npm start",
+    "test:spec": "LOG_LEVEL=fatal NODE_ENV=test mocha --recursive",
+    "test:lint": "semistandard --verbose | snazzy",
+    "test:cover": "nyc --reporter=lcov --reporter=text-summary npm run test:spec",
+    "test": "npm run test:lint && npm run test:cover",
+    "semantic-release": "semantic-release"
+  },
+  "author": "Sagacify",
+  "license": "ISC",
+  "dependencies": {
+    "@openapi-contrib/json-schema-to-openapi-schema": "^1.2.0",
+    "@sagacify/autoroute": "^1.2.0",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.3",
+    "express": "^4.17.1",
+    "express-openapi-validator": "^4.10.2",
+    "saga-logger": "^3.1.0",
+    "saga-managed-error": "^3.1.0"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ]
+  },
+  "semistandard": {
+    "env": {
+      "node": true,
+      "mocha": true
+    },
+    "ignore": [
+      "src/docs/**/*"
+    ]
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
+    "nyc": "^15.1.0",
+    "semantic-release": "^17.3.1",
+    "semistandard": "^16.0.0",
+    "snazzy": "^9.0.0",
+    "supertest": "^6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sagacify/semantic-test.git"
+  }
+}
