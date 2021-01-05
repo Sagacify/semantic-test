@@ -51,5 +51,15 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Sagacify/semantic-test.git"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
   }
 }
