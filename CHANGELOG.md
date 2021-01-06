@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/Sagacify/semantic-test/compare/v2.0.0...v2.1.0) (2021-01-06)
+
+
+### Features
+
+* **singularity:** added number 42 ([5f4af76](https://github.com/Sagacify/semantic-test/commit/5f4af762e4faf1d3c0d397f0872b540fb855d46e))
+
 # [2.0.0](https://github.com/Sagacify/semantic-test/compare/v1.1.0...v2.0.0) (2021-01-05)
 
 
