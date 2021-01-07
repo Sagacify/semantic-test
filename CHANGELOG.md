@@ -1,3 +1,10 @@
+## [2.1.6](https://github.com/Sagacify/semantic-test/compare/v2.1.5...v2.1.6) (2021-01-07)
+
+
+### Bug Fixes
+
+* **build:** test ([be261f9](https://github.com/Sagacify/semantic-test/commit/be261f9839a9fafe1e31ea3140c05785b15e563d))
+
 ## [2.1.4](https://github.com/Sagacify/semantic-test/compare/v2.1.3...v2.1.4) (2021-01-07)
 
 
