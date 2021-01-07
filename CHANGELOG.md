@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/Sagacify/semantic-test/compare/v3.0.0...v3.1.0) (2021-01-07)
+
+
+### Features
+
+* **index:** an other minor test ([51299bb](https://github.com/Sagacify/semantic-test/commit/51299bb72ab4b5b1426ebaa05f255b9d6bd66efe))
+
 # [3.0.0](https://github.com/Sagacify/semantic-test/compare/v2.1.9...v3.0.0) (2021-01-07)
 
 
