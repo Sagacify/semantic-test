@@ -1,3 +1,10 @@
+## [2.1.7](https://github.com/Sagacify/semantic-test/compare/v2.1.6...v2.1.7) (2021-01-07)
+
+
+### Bug Fixes
+
+* **release:** change semantic-release config ([629b38c](https://github.com/Sagacify/semantic-test/commit/629b38c539384d0255434c56ae0f4c0b46722f98))
+
 ## [2.1.6](https://github.com/Sagacify/semantic-test/compare/v2.1.5...v2.1.6) (2021-01-07)
 
 
