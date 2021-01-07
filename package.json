@@ -24,8 +24,7 @@
     "express": "^4.17.1",
     "express-openapi-validator": "^4.10.2",
     "saga-logger": "^3.1.0",
-    "saga-managed-error": "^3.1.0",
-    "yarn": "^1.22.10"
+    "saga-managed-error": "^3.1.0"
   },
   "nyc": {
     "include": [
