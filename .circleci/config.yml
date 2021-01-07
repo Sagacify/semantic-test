@@ -33,11 +33,10 @@ jobs:
           command: |
             npx semantic-release
       - run:
-          name: Update image with new package.json & CHANGELOG.md
+          name: Update image with new package.json
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               docker cp ./package.json app_container:/var/www/package.json
-              docker cp ./CHANGELOG.md app_container:/var/www/CHANGELOG.md
               docker commit app_container app_node
             fi
       - deploy:
