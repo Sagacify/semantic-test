@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            docker-compose -f docker-compose.tests.yml run node npm test
+            docker-compose -f docker-compose.tests.yml run --name="app_container" node npm test
       - run:
           name: Run sonar
           command: |
@@ -36,7 +36,9 @@ jobs:
           name: Update image with new package.json & CHANGELOG.md
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              docker-compose -f docker-compose.tests.yml build node
+              docker cp ./package.json app_container:/var/www/package.json
+              docker cp ./CHANGELOG.md app_container:/var/www/CHANGELOG.md
+              docker commit app_container app_node
             fi
       - deploy:
           name: Push image to DockerHub
