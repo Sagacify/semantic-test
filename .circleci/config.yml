@@ -15,10 +15,10 @@ jobs:
             chmod +x ./remove-volumes-v2.sh
             ./remove-volumes-v2.sh > docker-compose.tests.yml
       - run:
-          name: Create release
+          name: Prepare release
           command: |
-            npm run release:create
-        - run:
+            npm run release:prepare
+      - run:
           name: Build image
           command: |
             docker-compose -f docker-compose.tests.yml build node
