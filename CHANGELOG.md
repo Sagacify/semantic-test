@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/Sagacify/semantic-test/compare/v2.1.9...v3.0.0) (2021-01-07)
+
+
+### Performance Improvements
+
+* **index:** major change test ([0c9fccb](https://github.com/Sagacify/semantic-test/commit/0c9fccbfbdc06a5bcba4e50a75aa2a4b3dafa01e))
+
+
+### BREAKING CHANGES
+
+* **index:** Everything or nothing have changed
+
 ## [2.1.9](https://github.com/Sagacify/semantic-test/compare/v2.1.8...v2.1.9) (2021-01-07)
 
 
