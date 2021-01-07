@@ -1,3 +1,11 @@
+## [2.1.8](https://github.com/Sagacify/semantic-test/compare/v2.1.7...v2.1.8) (2021-01-07)
+
+
+### Bug Fixes
+
+* **circle:** update the package.json version in the docker image ([b4bf796](https://github.com/Sagacify/semantic-test/commit/b4bf7965350a5880337333c958615418f0074c54))
+* **circleci:** correct a typo in release job ([e17de3f](https://github.com/Sagacify/semantic-test/commit/e17de3ff873463c4909f52f616f5b052bcdf8bfc))
+
 ## [2.1.7](https://github.com/Sagacify/semantic-test/compare/v2.1.6...v2.1.7) (2021-01-07)
 
 
