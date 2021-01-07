@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/Sagacify/semantic-test/compare/v2.1.0...v2.1.1) (2021-01-07)
+
+
+### Bug Fixes
+
+* **circleci:** add docker in config script ([1c07f2d](https://github.com/Sagacify/semantic-test/commit/1c07f2d4c14236b2f331d5abc52b01e0e8e7b988))
+
 # [2.1.0](https://github.com/Sagacify/semantic-test/compare/v2.0.0...v2.1.0) (2021-01-06)
 
 
