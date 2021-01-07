@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/Sagacify/semantic-test/compare/v3.1.0...v3.1.1) (2021-01-07)
+
+
+### Bug Fixes
+
+* **circleci:** remove CHANGELOG.md from build image ([2a0b735](https://github.com/Sagacify/semantic-test/commit/2a0b73541bbd07984c9e3fa85ba2a9308f180fa5))
+
 # [3.1.0](https://github.com/Sagacify/semantic-test/compare/v3.0.0...v3.1.0) (2021-01-07)
 
 
