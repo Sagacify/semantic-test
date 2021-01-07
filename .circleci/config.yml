@@ -1,4 +1,73 @@
 version: 2
+
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: sagacify/docker-circle-ci2.0:v8
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Remove volumes
+          command: |
+            wget https://raw.githubusercontent.com/Sagacify/ci-tools/master/remove-volumes-v2.sh
+            chmod +x ./remove-volumes-v2.sh
+            ./remove-volumes-v2.sh > docker-compose.tests.yml
+      - run:
+          name: Create release
+          command: |
+            npm run release:create
+        - run:
+          name: Build image
+          command: |
+            docker-compose -f docker-compose.tests.yml build node
+      - run:
+          name: Run tests
+          command: |
+            docker-compose -f docker-compose.tests.yml run node npm test
+      - run:
+          name: Run sonar
+          command: |
+            wget https://raw.githubusercontent.com/Sagacify/ci-tools/master/run-sonar-v2.sh
+            chmod +x ./run-sonar-v2.sh
+            bash ./run-sonar-v2.sh run
+      - run:
+          name: Publish release
+          command: |
+            npm run release:publish
+      - run:
+          name: Update image with new package.json & CHANGELOG.md
+          command: |
+            docker cp package.json "$CIRCLE_PROJECT_REPONAME"_node:/var/www/package.json
+            docker cp CHANGELOG.md "$CIRCLE_PROJECT_REPONAME"_node:/var/www/CHANGELOG.md
+            docker commit "$CIRCLE_PROJECT_REPONAME"_node $CIRCLE_PROJECT_REPONAME:v$CIRCLE_BUILD_NUM
+      - deploy:
+          name: Push image to DockerHub
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              echo "{\"https://index.docker.io/v1/\":{\"auth\":\"<AUTH>\",\"email\":\"<EMAIL>\"}}" | sed "s/<EMAIL>/$HUB_EMAIL/;s/<AUTH>/$HUB_AUTH/" > ~/.dockercfg
+              docker tag app_node sagacify/$CIRCLE_PROJECT_REPONAME:v$CIRCLE_BUILD_NUM
+              docker push sagacify/$CIRCLE_PROJECT_REPONAME
+            fi
+      - deploy:
+          name: Push dryrun image to DockerHub
+          command: |
+            case "${CIRCLE_BRANCH}" in
+              "dryrun_"*)
+                echo "{\"https://index.docker.io/v1/\":{\"auth\":\"<AUTH>\",\"email\":\"<EMAIL>\"}}" | sed "s/<EMAIL>/$HUB_EMAIL/;s/<AUTH>/$HUB_AUTH/" > ~/.dockercfg
+                docker tag app_node sagacify/$CIRCLE_PROJECT_REPONAME:dryrun-v$CIRCLE_BUILD_NUM
+                docker push sagacify/$CIRCLE_PROJECT_REPONAME
+              ;;
+            esac
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build:
+          context: DockerHub
+
+version: 2
 jobs:
   build:
     docker:

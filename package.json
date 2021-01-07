@@ -10,7 +10,9 @@
     "test:lint": "semistandard --verbose | snazzy",
     "test:cover": "nyc --reporter=lcov --reporter=text-summary npm run test:spec",
     "test": "npm run test:lint && npm run test:cover",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "release:create": "semantic-release --dry-run",
+    "release:publish": "semantic-release --publish"
   },
   "author": "Sagacify",
   "license": "ISC",
