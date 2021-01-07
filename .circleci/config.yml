@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: /app
     docker:
-      - image: sagacify/docker-circle-ci2.0:v13
+      - image: sagacify/docker-circle-ci2.0:v14
     steps:
       - checkout
       - setup_remote_docker
