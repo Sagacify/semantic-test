@@ -1,3 +1,10 @@
+## [2.1.9](https://github.com/Sagacify/semantic-test/compare/v2.1.8...v2.1.9) (2021-01-07)
+
+
+### Bug Fixes
+
+* **npm:** remove useless packages ([640b4b2](https://github.com/Sagacify/semantic-test/commit/640b4b2973a3dfa53a45ca604a7404073d1c0af6))
+
 ## [2.1.8](https://github.com/Sagacify/semantic-test/compare/v2.1.7...v2.1.8) (2021-01-07)
 
 
