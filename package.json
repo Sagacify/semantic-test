@@ -7,7 +7,7 @@
     "start": "node .",
     "start:dev": "LOG_PRETTY=true nodemon --watch src -e js,json --exec npm start",
     "test:spec": "LOG_LEVEL=fatal NODE_ENV=test mocha --recursive",
-    "test:lint": "semistandard --verbose | snazzy",
+    "test:lint": "eslint -f stylish .",
     "test:cover": "nyc --reporter=lcov --reporter=text-summary npm run test:spec",
     "test": "npm run test:lint && npm run test:cover"
   },
@@ -28,21 +28,26 @@
       "src/**/*.js"
     ]
   },
-  "semistandard": {
-    "env": {
-      "node": true,
-      "mocha": true
-    },
-    "ignore": [
+  "eslintConfig": {
+    "ignorePatterns": [
       "src/docs/**/*"
+    ],
+    "extends": [
+      "standard",
+      "@sagacify"
     ]
   },
   "devDependencies": {
+    "@sagacify/eslint-config": "^1.1.0",
     "chai": "^4.2.0",
+    "eslint": "^7.18.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "mocha": "^8.2.1",
     "nodemon": "^2.0.6",
     "nyc": "^15.1.0",
-    "semistandard": "^16.0.0",
     "snazzy": "^9.0.0",
     "supertest": "^6.0.1"
   },

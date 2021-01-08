@@ -27,6 +27,12 @@ jobs:
           command: |
             npx semantic-release
       - run:
+          name: Capture old version
+          # jq should be included in the base image
+          command: |
+            apk add --no-cache
+            export OLD_VERSION="$(jq -r .version package.json)"
+      - run:
           name: Update image with new package.json
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
@@ -34,11 +40,16 @@ jobs:
               docker cp ./package.json app_container:/var/www/package.json
               docker commit app_container app_node
             fi
+      - run:
+          name: Capture new version
+          command: |
+            export NEW_VERSION="$(jq -r .version package.json)"
       - deploy:
           name: Push image to DockerHub
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "master" ] && [ "${OLD_VERSION}" != "${NEW_VERSION}" ]; then
               echo "{\"https://index.docker.io/v1/\":{\"auth\":\"<AUTH>\",\"email\":\"<EMAIL>\"}}" | sed "s/<EMAIL>/$HUB_EMAIL/;s/<AUTH>/$HUB_AUTH/" > ~/.dockercfg
+              docker create --name="app_container" app_node
               docker tag app_node sagacify/$CIRCLE_PROJECT_REPONAME:v$CIRCLE_BUILD_NUM
               docker push sagacify/$CIRCLE_PROJECT_REPONAME
             fi
