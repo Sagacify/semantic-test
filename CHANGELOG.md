@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/Sagacify/semantic-test/compare/v3.1.1...v3.1.2) (2021-01-08)
+
+
+### Bug Fixes
+
+* **circleci:** test env var setup ([8aa5601](https://github.com/Sagacify/semantic-test/commit/8aa5601620d1736e23d06b6eb88ca7efe0a583d1))
+
 ## [3.1.1](https://github.com/Sagacify/semantic-test/compare/v3.1.0...v3.1.1) (2021-01-07)
 
 
