@@ -1,3 +1,10 @@
+## [3.1.4](https://github.com/Sagacify/semantic-test/compare/v3.1.3...v3.1.4) (2021-01-26)
+
+
+### Bug Fixes
+
+* **circleci:** change docker versioning ([ea1c670](https://github.com/Sagacify/semantic-test/commit/ea1c670f6b8ef05d63e71601bdc63801533827e9))
+
 ## [3.1.3](https://github.com/Sagacify/semantic-test/compare/v3.1.2...v3.1.3) (2021-01-26)
 
 
