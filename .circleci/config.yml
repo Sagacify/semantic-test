@@ -23,12 +23,6 @@ jobs:
           command: |
             docker-compose -f docker-compose.tests.yml run node npm test
       - run:
-          name: Run sonar
-          command: |
-            wget https://raw.githubusercontent.com/Sagacify/ci-tools/master/run-sonar-v2.sh
-            chmod +x ./run-sonar-v2.sh
-            bash ./run-sonar-v2.sh run
-      - run:
           name: Publish release
           command: |
             npx semantic-release
