@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            docker-compose -f docker-compose.tests.yml run --name="app_container" node npm test
+            docker-compose -f docker-compose.tests.yml run node npm test
       - run:
           name: Run sonar
           command: |
@@ -36,6 +36,7 @@ jobs:
           name: Update image with new package.json
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker create --name="app_container" app_node
               docker cp ./package.json app_container:/var/www/package.json
               docker commit app_container app_node
             fi
