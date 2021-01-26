@@ -1,3 +1,10 @@
+## [3.1.8](https://github.com/Sagacify/semantic-test/compare/v3.1.7...v3.1.8) (2021-01-26)
+
+
+### Bug Fixes
+
+* **ci:** improve version message ([c3b1855](https://github.com/Sagacify/semantic-test/commit/c3b1855b2b54e96fe6e6d934fd309911ac67e122))
+
 ## [3.1.7](https://github.com/Sagacify/semantic-test/compare/v3.1.6...v3.1.7) (2021-01-26)
 
 
