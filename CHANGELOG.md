@@ -1,3 +1,10 @@
+## [3.1.10](https://github.com/Sagacify/semantic-test/compare/v3.1.9...v3.1.10) (2021-01-26)
+
+
+### Bug Fixes
+
+* **ci:** remove useless docker create in docker push step ([c3536b5](https://github.com/Sagacify/semantic-test/commit/c3536b5af3d4cbdfe953b79c37541adf733805f3))
+
 ## [3.1.9](https://github.com/Sagacify/semantic-test/compare/v3.1.8...v3.1.9) (2021-01-26)
 
 
