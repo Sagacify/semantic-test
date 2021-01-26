@@ -22,12 +22,15 @@ jobs:
           name: Run tests
           command: |
             docker-compose -f docker-compose.tests.yml run node npm test
+      # jq should be included in the base image
       - run:
-          name: Capture old version
-          # jq should be included in the base image
+          name: Install jq
           command: |
             apk add --no-cache jq
-            export OLD_VERSION="$(jq -r .version package.json)"
+      - run:
+          name: Capture old version
+          command: |
+            echo "export OLD_VERSION=$(jq -r .version package.json" >> $BASH_ENV
       - run:
           name: Publish release
           command: |
@@ -43,7 +46,7 @@ jobs:
       - run:
           name: Capture new version
           command: |
-            export NEW_VERSION="$(jq -r .version package.json)"
+            echo "export NEW_VERSION=$(jq -r .version package.json" >> $BASH_ENV
       - deploy:
           name: Push image to DockerHub
           command: |
