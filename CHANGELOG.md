@@ -1,3 +1,10 @@
+## [3.1.5](https://github.com/Sagacify/semantic-test/compare/v3.1.4...v3.1.5) (2021-01-26)
+
+
+### Bug Fixes
+
+* **ci:** add message when no new version ([804d23f](https://github.com/Sagacify/semantic-test/commit/804d23fc201078737e15ad07cc6ed5125b67368e))
+
 ## [3.1.4](https://github.com/Sagacify/semantic-test/compare/v3.1.3...v3.1.4) (2021-01-26)
 
 
