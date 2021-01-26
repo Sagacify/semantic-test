@@ -1,17 +1,17 @@
 module.exports.filterOpenApiPaths = paths => Object.keys(paths || {})
-  .reduce((publicPaths, pathKey) => {
+  .reduce((publicPathsAcc, pathKey) => {
     const publicPath = Object.keys(paths[pathKey])
-      .reduce((publicPath, verb) => {
+      .reduce((publicPathAcc, verb) => {
         if (!paths[pathKey][verb]['x-saga-no-doc']) {
-          publicPath[verb] = paths[pathKey][verb];
+          publicPathAcc[verb] = paths[pathKey][verb];
         }
 
-        return publicPath;
+        return publicPathAcc;
       }, {});
 
-    if (Object.keys(publicPath).length > 0) {
-      publicPaths[pathKey] = publicPath;
+    if (Object.keys(publicPathsAcc).length > 0) {
+      publicPathsAcc[pathKey] = publicPath;
     }
 
-    return publicPaths;
+    return publicPathsAcc;
   }, {});

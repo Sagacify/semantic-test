@@ -83,7 +83,9 @@ const getApp = async () => {
 const start = async (port) => {
   const app = await getApp();
 
-  return new Promise(resolve => app.listen(port, resolve));
+  return new Promise(resolve => {
+    app.listen(port, resolve);
+  });
 };
 
 module.exports = {

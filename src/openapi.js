@@ -6,7 +6,7 @@ let documentCache;
 
 module.exports = async () => {
   if (!documentCache) {
-    documentCache = {
+    const tmpDocCache = {
       openapi: '3.0.3',
       info: {
         title: name,
@@ -59,6 +59,11 @@ module.exports = async () => {
         }
       }
     };
+
+    // The if avoids possible race condition
+    if (!documentCache) {
+      documentCache = tmpDocCache;
+    }
   }
 
   return documentCache;
