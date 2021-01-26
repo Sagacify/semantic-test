@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: /app
     docker:
-      - image: sagacify/docker-circle-ci2.0:v15
+      - image: sagacify/docker-circle-ci2.0:v17
     steps:
       - checkout
       - setup_remote_docker
@@ -52,6 +52,8 @@ jobs:
               docker create --name="app_container" app_node
               docker tag app_node sagacify/$CIRCLE_PROJECT_REPONAME:v$CIRCLE_BUILD_NUM
               docker push sagacify/$CIRCLE_PROJECT_REPONAME
+            else
+              echo "No new version to push!"
             fi
       - deploy:
           name: Push dryrun image to DockerHub
