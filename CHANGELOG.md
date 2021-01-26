@@ -1,3 +1,10 @@
+## [3.1.6](https://github.com/Sagacify/semantic-test/compare/v3.1.5...v3.1.6) (2021-01-26)
+
+
+### Bug Fixes
+
+* **ci:** correct the capture of the old release ([e81e3d5](https://github.com/Sagacify/semantic-test/commit/e81e3d50284736562cca95afc4716c0ffe94d714))
+
 ## [3.1.5](https://github.com/Sagacify/semantic-test/compare/v3.1.4...v3.1.5) (2021-01-26)
 
 
