@@ -1,3 +1,11 @@
+## [3.1.9](https://github.com/Sagacify/semantic-test/compare/v3.1.8...v3.1.9) (2021-01-26)
+
+
+### Bug Fixes
+
+* **ci:** correct release env vars creation ([8d26ed7](https://github.com/Sagacify/semantic-test/commit/8d26ed7e624144a6d413e41d1d26077fedb70ef9))
+* **ci:** use $BASH_ENV to store release env vars ([a5bea05](https://github.com/Sagacify/semantic-test/commit/a5bea051a913661b8850963a66619e060b776395))
+
 ## [3.1.8](https://github.com/Sagacify/semantic-test/compare/v3.1.7...v3.1.8) (2021-01-26)
 
 
