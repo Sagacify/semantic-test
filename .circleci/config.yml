@@ -23,15 +23,15 @@ jobs:
           command: |
             docker-compose -f docker-compose.tests.yml run node npm test
       - run:
-          name: Publish release
-          command: |
-            npx semantic-release
-      - run:
           name: Capture old version
           # jq should be included in the base image
           command: |
             apk add --no-cache
             export OLD_VERSION="$(jq -r .version package.json)"
+      - run:
+          name: Publish release
+          command: |
+            npx semantic-release
       - run:
           name: Update image with new package.json
           command: |
