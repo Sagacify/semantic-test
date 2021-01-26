@@ -1,3 +1,10 @@
+## [3.1.3](https://github.com/Sagacify/semantic-test/compare/v3.1.2...v3.1.3) (2021-01-26)
+
+
+### Bug Fixes
+
+* **index:** another stupid fix ([aa0b952](https://github.com/Sagacify/semantic-test/commit/aa0b952e9ff87836cd2917bd75e002b4675478df))
+
 ## [3.1.2](https://github.com/Sagacify/semantic-test/compare/v3.1.1...v3.1.2) (2021-01-08)
 
 
