@@ -1,3 +1,10 @@
+## [3.1.7](https://github.com/Sagacify/semantic-test/compare/v3.1.6...v3.1.7) (2021-01-26)
+
+
+### Bug Fixes
+
+* **ci:** correct jq install ([0a5a47d](https://github.com/Sagacify/semantic-test/commit/0a5a47df5b21d296b62b485a0282c1010f97bfc6))
+
 ## [3.1.6](https://github.com/Sagacify/semantic-test/compare/v3.1.5...v3.1.6) (2021-01-26)
 
 
