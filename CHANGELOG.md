@@ -1,3 +1,10 @@
+## [3.1.11](https://github.com/Sagacify/semantic-test/compare/v3.1.10...v3.1.11) (2021-01-27)
+
+
+### Performance Improvements
+
+* **filterOpenApiPaths:** test perf commit impact ([0acc96b](https://github.com/Sagacify/semantic-test/commit/0acc96ba6b3435b06bf9d71c5b4777519a6c9778))
+
 ## [3.1.10](https://github.com/Sagacify/semantic-test/compare/v3.1.9...v3.1.10) (2021-01-26)
 
 
