@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: /app
     docker:
-      - image: sagacify/docker-circle-ci2.0:v17
+      - image: sagacify/docker-circle-ci2.0:v19
     steps:
       - checkout
       - setup_remote_docker
@@ -22,11 +22,6 @@ jobs:
           name: Run tests
           command: |
             docker-compose -f docker-compose.tests.yml run node npm test
-      # jq should be included in the base image
-      - run:
-          name: Install jq
-          command: |
-            apk add --no-cache jq
       - run:
           name: Capture old version
           command: |

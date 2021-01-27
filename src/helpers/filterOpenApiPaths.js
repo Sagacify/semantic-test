@@ -9,7 +9,7 @@ module.exports.filterOpenApiPaths = paths => Object.keys(paths || {})
         return publicPathAcc;
       }, {});
 
-    if (Object.keys(publicPathsAcc).length > 0) {
+    if (Object.keys(publicPath).length > 0) {
       publicPathsAcc[pathKey] = publicPath;
     }
 
